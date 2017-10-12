@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<title>Registration</title>
+<link rel="stylesheet" href="view/registrationStyle.css">
+<script src="registerJS.js"></script>	
+</head>
+<body>
+	<div class="wrapper">
+		<h1 align="center">Create your account</h1>
+			<form action="registration" class="form-signup" method="get">
+				<div id="error" style="color: #FF0000;"></div>
+				<table class="main">
+					<tr class="title">
+						<th align="left">Name</th>
+					</tr>
+					
+					<tr class="field">
+						
+						<td><input type="text" placeholder="First" name="first" id="first" required="required"></td>
+						<td><input type="text" placeholder="Last" name="last" id="last"></td>
+					</tr>
+					
+					<tr class="title">
+						<th align="left">Choose your username</th>
+					</tr>
+					
+					<tr>
+						<td><input type="email" placeholder="abc@gmail.com"
+						 class="form-control"
+						 name="email" 
+						 id="mail" 
+						 required="required"
+						 onkeypress="emailValid()"
+						 ></td>
+					</tr>
+					
+					<tr>
+						<td><div id="errormail"></div></td>
+						
+					</tr>
+					
+					<tr class="title">
+						<th align="left">Create your password</th>
+					</tr>
+					
+					<tr>
+						<td><input type="password" name="password" id="password" required="required"
+						pattern="[A-Za-z0-9]{8,16}"
+						title="Username should only contain lowercase,uppercase  letters and numbers with min6 to max16 digit.e.g. John123"
+						onkeypress="passwordValid()"
+						></td>
+					</tr>
+					<tr>
+						<td><div id="errorpass1"></div></td>
+					</tr>
+					<tr>
+						<td><div id="errorpass2"></div></td>
+					</tr>
+					<tr>
+						<td><div id="errorpass3"></div></td>
+					</tr>
+					<tr>
+						<td><div id="errorpass4"></div></td>
+					</tr>
+					<tr>
+						<td><div id="errorpass5"></div></td>
+					</tr>
+					
+					<tr class="title">
+						<th align="left">Confirm your password</th>
+					</tr>
+					
+					<tr>
+						<td><input type="password" name="Cpassword" id="Cpassword" required="required"
+						onkeypress="ConfirmRePassword()"></td>
+					</tr>
+					<tr>
+						<td><div id="errorCpass"></div></td>
+					</tr>
+					<tr class="title">
+						<th align="left">Mobile No</th>
+					</tr>
+					
+					<tr>
+						<td><input type="text" 
+						pattern="[0-9]{10}" 
+						class="number" 
+						name="Mno" 
+						id="Mno" 
+						required="required"
+						onkeypress="validMobileNo()"
+						></td>
+					</tr>
+					<tr>
+						<td><div id="errorMno"></div></td>
+					</tr>
+					<tr>
+						<td><button type="submit" value="submit">submit</button></td>
+						<td><input type="reset" value="Reset" name="reset"></td>
+					</tr>
+					
+				</table>
+			</form>
+	</div>
+</body>
+</html>
