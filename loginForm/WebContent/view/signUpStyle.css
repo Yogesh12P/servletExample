@@ -45,15 +45,18 @@ body {
 	input[type="text"] {
 	  margin-bottom: -1px;
 	  padding: 10px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
+	  
+	}
+	
+	input[type="email"]{
+		border: none;
+   		background: transparent;
 	}
 
 	input[type="password"] {
 	  padding: 10px;
 	  margin-bottom: 20px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
+	  
 	}
 }
 
