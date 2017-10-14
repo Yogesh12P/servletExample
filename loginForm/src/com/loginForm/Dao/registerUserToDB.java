@@ -20,15 +20,16 @@ public class registerUserToDB {
 				Connection conn = DriverManager.getConnection(url,"root","root");
 				
 				String query = "insert into userInfo (userId, userName, userEmail, password, MobileNo) values (?, ?, ?, ?, ?)"; 
-				String fullname = model.getFirst_name()+model.getlast_name();
+				String fullname = model.getrFirst_name()+model.getrLast_name();
 				
 				
 				PreparedStatement ps = conn.prepareStatement(query);
-				ps.setString(1, "puja");
+				
+				ps.setString(1, model.getrFirst_name());
 				ps.setString(2, fullname);
-				ps.setString(3, model.getEmail());
-				ps.setString(4, model.getPassword());
-				ps.setString(5, model.getMobile_no());
+				ps.setString(3, model.getrEmail());
+				ps.setString(4, model.getrPassword());
+				ps.setString(5, model.getrMno());
 				ps.execute();
 				conn.close();
 				System.out.println("register succefully");

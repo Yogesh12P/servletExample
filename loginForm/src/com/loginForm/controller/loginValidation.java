@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.loginForm.Dao.userValidation;
 import com.loginForm.model.userModel;
@@ -32,17 +32,18 @@ public class loginValidation extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		model.setEmail(username);
-		model.setPassword(password);
+		model.setrEmail(username);
+		model.setrPassword(password);
 	
 		if(uv.valid_user(model))
 		{
 			System.out.println("login succefully");
 			
-			//save user to cookies
-			Cookie ck = new Cookie("user", username);
-			response.addCookie(ck);
-			request.getRequestDispatcher("/homePage.html").forward(request, response);
+			//save user to session
+			HttpSession session = request.getSession(true);
+			session.setAttribute("login_username", model.getrFirst_name());
+			System.out.println("user = "+model.getrFirst_name());
+			request.getRequestDispatcher("/homepage.jsp").forward(request, response);
 		}
 		else
 		{

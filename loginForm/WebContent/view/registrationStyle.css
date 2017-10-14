@@ -3,52 +3,55 @@ body {
 	background-color: #F2F3F4;	
 }
 
-.wrapper {	
+.container {	
 	margin-top: 80px;
  	margin-bottom: 80px;
   	
 }
 
-.form-signup {
-	
+.form-horizontal {
+  border-radius: 25px;
   box-shadow: 2px 2px 5px gray;
   background-color: #FEFEFE  ;
-  max-width: 600px;
+  max-width: 550px;
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0,0,0,0.1);  
   
-  
-  
+ 
 }  
-  
-  input[type="text"] {
+ 
+ div.row{
+ 	padding-top: 2px;
+ 	padding-bottom: 15px;
+ } 
+  input[type="text"],
+  [type="email"],
+  [type="password"],
+  [type=number] {
 	  margin-bottom: -1px;
 	  padding: 5px;
+	  box-sizing:border-box;
+	  
 	}
-  
-  input[type="email"],[type="password"],[type="number"],[class="number"]{
-  	;
-  	width: 200%;
-  	padding: 5px;	
-  }
-  input[type="email"]{
-  	text-align:right;
-  }
-  
-  tr.title th {
-    padding-top: 20px;
+ input[type="email"],
+  [type="password"],
+  [type=number]{
+ 	width: 100%;
+ }
+ 
+ input[type=number] {
+    -moz-appearance:textfield;
 }
-.main{
-	  	font-size = 8px;
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-   -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
-}
+
+
+
   
 

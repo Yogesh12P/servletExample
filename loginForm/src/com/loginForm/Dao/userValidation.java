@@ -24,13 +24,14 @@ public class userValidation {
 				
 				
 
-					String sql = "Select * from userInfo Where userEmail='" + model.getEmail() + "' and password='" + model.getPassword() + "'";	
+					String sql = "Select * from userInfo Where userEmail='" + model.getrEmail() + "' and password='" + model.getrPassword() + "'";	
 					ResultSet rs = stmt.executeQuery(sql);
 					//stmt.close();
 					if(rs.next())
 					{
 						res = true;
 						System.out.println(rs.getString(2));
+						model.setrFirst_name(rs.getString(1));
 						System.out.println("login succefully");
 						
 					}else

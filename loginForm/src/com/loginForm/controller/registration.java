@@ -33,12 +33,16 @@ public class registration extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter pw = response.getWriter();
 		
+		userModel model = (userModel)request.getAttribute("bean");
+		/*
 		String f_name = request.getParameter("first");
 		String l_name = request.getParameter("last");
 		model.setFirst_name(f_name+l_name);
 		model.setEmail(request.getParameter("email"));
 		model.setPassword(request.getParameter("password"));
 		model.setMobile_no(request.getParameter("Mno"));
+		*/
+		System.out.println("model::"+model);
 		
 		if(robj.register_user(model))
 		{

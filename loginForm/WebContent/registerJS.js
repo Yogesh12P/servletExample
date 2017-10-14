@@ -3,7 +3,7 @@
 
 function emailValid()
 {
-	var email = document.getElementById("mail").value;
+	var email = document.getElementById("rEmail").value;
 	var error = document.getElementById("errormail");
 	var re = /[^\s@]+@[^\s@]+\.com/;
 	
@@ -24,12 +24,10 @@ function emailValid()
 			error.style.color = "red";
 		}
 	}
-		
-	
 }
 
 function passwordValid(){
-	var email = document.getElementById("password").value;
+	var email = document.getElementById("rPassword").value;
 	var error1 = document.getElementById("errorpass1");
 	var error2 = document.getElementById("errorpass2");
 	var error3 = document.getElementById("errorpass3");
@@ -52,34 +50,34 @@ function passwordValid(){
 		
 		if(re0.test(email))
 		{
-			error2.innerHTML = "password get one capital letter"
+			error2.innerHTML = "capital letter"
 			error2.style.color = "green"
 		}
 		else
 		{
-			error2.innerHTML = "password must required one capital letter"
+			error2.innerHTML = "capital letter"
 			error2.style.color = "red"
 		}
 		
 		if(re1.test(email))
 		{
-			error3.innerHTML = "password get one small letter"
+			error3.innerHTML = "small letter"
 			error3.style.color = "green"
 		}
 		else
 		{
-			error3.innerHTML = "password must required one small letter"
+			error3.innerHTML = " small letter"
 			error3.style.color = "red"
 		}
 		
 		if(re2.test(email))
 		{
-			error4.innerHTML = "password get one digit"
+			error4.innerHTML = "one digit"
 			error4.style.color = "green"
 		}
 		else
 		{
-			error4.innerHTML = "password must required one digit"
+			error4.innerHTML = "one digit"
 			error4.style.color = "red"
 		}
 		
@@ -91,9 +89,9 @@ function passwordValid(){
 }
 
 function ConfirmRePassword(){
-	var email = document.getElementById("password").value;
-	var Cemail = document.getElementById("Cpassword").value;
-	var error = document.getElementById("errorCpass");
+	var email = document.getElementById("rPassword").value;
+	var Cemail = document.getElementById("rEPassword").value;
+	var error = document.getElementById("errorpass");
 	
 	if(email == Cemail)
 	{
@@ -102,13 +100,13 @@ function ConfirmRePassword(){
 	}
 	else
 	{
-		error.innerHTML = "Password and confirmed password must be same";
+		error.innerHTML = "Re-password not matched";
 		error.style.color = "red";
 	}
 }
 
 function validMobileNo(){
-	var Mno = document.getElementById("Mno").value;
+	var Mno = document.getElementById("rMno").value;
 	var error = document.getElementById("errorMno");
 	var re = /^[7-9][0-9]{9}/;
 	
